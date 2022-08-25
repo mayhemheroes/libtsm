@@ -1,0 +1,4 @@
+project: PROJECT
+target: libtsm_fuzzer
+cmds:
+- cmd: /out/libtsm_fuzzer
