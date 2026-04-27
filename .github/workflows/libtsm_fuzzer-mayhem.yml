@@ -42,13 +42,8 @@ jobs:
         labels: ${{ steps.meta.outputs.labels }}
         file: mayhem/Dockerfile
     - name: Start analysis
-      uses: ForAllSecure/mcode-action@v1
+      uses: forallsecure/mcode-action@long-runs
       with:
         mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
         args: --image ${{ steps.meta.outputs.tags }} --file mayhem/libtsm_fuzzer.mayhemfile
           --cmd '/out/libtsm_fuzzer'
-        sarif-output: sarif
-    - name: Upload SARIF file(s)
-      uses: github/codeql-action/upload-sarif@v2
-      with:
-        sarif_file: sarif
