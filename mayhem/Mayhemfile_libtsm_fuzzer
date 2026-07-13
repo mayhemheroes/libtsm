@@ -1,0 +1,6 @@
+project: libtsm
+target: libtsm_fuzzer
+
+cmds:
+  - cmd: /mayhem/libtsm_fuzzer
+    libfuzzer: true
